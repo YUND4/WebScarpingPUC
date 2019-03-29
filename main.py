@@ -14,6 +14,19 @@ class loadPUC:
         'total': 0
     }
 
+    def merge(self, lis):
+        result = ''
+        for l in lis:
+            result = result + l
+        return result
+
+    def mergeNames(self, lis):
+        result = ''
+        for l in lis:
+            result = result + ' ' + l
+        return result
+
+
     def __init__(self):
         dictionary = self.result
         i = 1
@@ -50,7 +63,7 @@ class loadPUC:
                     y = None
                 dictionary['total'] = dictionary['total'] + 1 
                 dictionary['cuentas'].append({
-                    'nombre': x[1],
+                    'nombre': self.mergeNames(x[1:]),
                     'codigo': x[0],
                     'descripcion':y,
                     'tipo':tipo,
@@ -72,8 +85,8 @@ class loadPUC:
                             y = None
                         dictionary['total'] = dictionary['total'] + 1 
                         dictionary['cuentas'][-1]['hijos'].append({
-                            'nombre': x[1],
-                            'codigo': x[0],
+                            'nombre': self.mergeNames(x[1:]),
+                            'codigo': self.merge(x[0][-2:]),
                             'descripcion':y,
                             'tipo':tipo,
                             'hijos': []
@@ -94,8 +107,8 @@ class loadPUC:
                                     y = None
                                 dictionary['total'] = dictionary['total'] + 1 
                                 dictionary['cuentas'][-1]['hijos'][-1]['hijos'].append({
-                                    'nombre': x[1],
-                                    'codigo': x[0],
+                                    'nombre': self.mergeNames(x[1:]),
+                                    'codigo': self.merge(x[0][-2:]),
                                     'descripcion':y,
                                     'tipo':tipo,
                                     'hijos': []
@@ -112,8 +125,8 @@ class loadPUC:
                                         x = x.split(' ')
                                         dictionary['total'] = dictionary['total'] + 1 
                                         dictionary['cuentas'][-1]['hijos'][-1]['hijos'][-1]['hijos'].append({
-                                            'nombre': x[1],
-                                            'codigo': x[0],
+                                            'nombre': self.mergeNames(x[1:]),
+                                            'codigo': self.merge(x[0][-2:]),
                                             'descripcion': None,
                                             'tipo':tipo,
                                             'hijos': []
