@@ -20,8 +20,13 @@ _Sigue los pasos para que se ejecute correctamenete_
 _Parado en la caperta principal del proyecto ejecuta los siguientes comandos en el CMD o POWERSHELL de windows_
 
 ```
+# on Windows
 
 pip install -r requirements.txt
+
+# on Linux
+
+pip3 install -r requirements.txt
 
 ```
 
@@ -29,7 +34,13 @@ pip install -r requirements.txt
 
 ```
 
+# on Windows
+
 python main.py
+
+# on Linux
+
+python3 main.py
 
 ```
 
