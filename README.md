@@ -10,7 +10,7 @@ _Este script esta diseñado para consumir la pagina https://puc.com.co/_
 
 _Para que este proyecto funcione correctamente necesitas los siguientes paquetes_
 
-* Python (2.7, 3.5, 3.6, 3.7)
+* Python (3.7)
 
 ### Instalación 🔧
 
